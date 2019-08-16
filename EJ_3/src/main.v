@@ -1,9 +1,9 @@
 module main;
-    reg in1, in2, in3, in4;
-    reg a, b;
+    reg [3:0] in;
+    reg [1:0] sel;
     wire out;
 
-    mux4in myMux(in1, in2, in3, in4, a, b, out);
+    mux4in myMux(in, sel, out);
 
     integer i, j, k, l, m, n;
 
@@ -14,9 +14,9 @@ module main;
                     for (l = 0; l < 2; l = l + 1) begin
                         for (m = 0; m < 2; m = m + 1) begin
                             for (n = 0; n < 2; n = n + 1) begin
-                                b = i; a = j; in1 = k; in2 = l; in3 = m; in4 = n;
-                                $display("Selector is: %b%b. ", b, a);
-                                $display("Inputs are: %b %b %b %b. ", in1, in2, in3, in4);
+                                sel[1] = i; sel[0] = j; in[3] = k; in[2] = l; in[1] = m; in[0] = n;
+                                $display("Selector is: %b. ", sel);
+                                $display("Inputs are: %b", in);
                                 #1;
                             end
                         end

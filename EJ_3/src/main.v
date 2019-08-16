@@ -20,6 +20,7 @@ module main;
                         for (m = 0; m < 2; m = m + 1) begin
                             for (n = 0; n < 2; n = n + 1) begin
                                 sel[1] = i; sel[0] = j; in[3] = k; in[2] = l; in[1] = m; in[0] = n;
+                                code[1] = i; code[0] = j;
                                 $display("Selector is: %b. ", sel);
                                 $display("Inputs are: %b", in);
                                 #1;
@@ -27,7 +28,6 @@ module main;
                         end
                     end
                 end
-                code[1] = i; code[0] = j;
             end
         end
         $finish;
@@ -35,7 +35,8 @@ module main;
 
     initial begin
         // monitor only executes when one of the input variable changes.
-        $monitor("Outs have changed! New MUX value is: %b. New DECODER value is: %b%b%b%b", outM, o3, o2, o1, o0);
+        $monitor("New DECODER value is: %b%b%b%b", o3, o2, o1, o0);
+        $monitor("Outs have changed! New MUX value is: %b. ", outM);
     end
 
 endmodule

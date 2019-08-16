@@ -1,13 +1,18 @@
 module main;
     reg [3:0] in;
-    reg [1:0] sel;
-    wire out;
+    reg [1:0] sel; 
+    wire outM;
 
-    mux4in myMux(in, sel, out);
+    reg [1:0] code;
+    wire o0, o1, o2, o3;
+
+    mux4in myMux(in, sel, outM);
+    decoder4out myDecoder(code, o0, o1, o2, o3);
 
     integer i, j, k, l, m, n;
 
     initial begin
+        code = 0;
         for (i = 0; i < 2; i = i + 1) begin
             for (j = 0; j < 2; j = j + 1) begin
                 for (k = 0; k < 2; k = k + 1) begin
@@ -22,6 +27,7 @@ module main;
                         end
                     end
                 end
+                code[1] = i; code[0] = j;
             end
         end
         $finish;
@@ -29,7 +35,7 @@ module main;
 
     initial begin
         // monitor only executes when one of the input variable changes.
-        $monitor("Outs have changed! New values are: %b", out) ;
+        $monitor("Outs have changed! New MUX value is: %b. New DECODER value is: %b%b%b%b", outM, o3, o2, o1, o0);
     end
 
 endmodule

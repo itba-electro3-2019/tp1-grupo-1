@@ -1,9 +1,7 @@
 module mux4in (x, sel, y);
-    input [3:0] x;                      // sel selects the exit (x[3], x[2], x[1], x[0]).
-    input [1:0] sel;
+    input [3:0] x;
+    input [1:0] sel;                      // sel selects the exit (x[3], x[2], x[1], x[0]).
     output reg y;
-
-    reg curr;                           // Curr is the register the mux is copying currently.
 
     always @(sel or x) begin
         if (sel == 0)

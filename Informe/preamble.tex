@@ -16,6 +16,7 @@
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
 \usepackage{import}
+\usepackage{multicol}
 
 \usepackage[margin=2cm]{geometry}
 
@@ -117,7 +118,7 @@
 {
 \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
 \draw (0,0) grid (4,4);
-\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {AB} node [pos=0.75,below left,anchor=north east] {CD} ++(135:1);
+\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {BA} node [pos=0.75,below left,anchor=north east] {DC} ++(135:1);
 %
 \matrix (mapa) [matrix of nodes,
         column sep={0.8cm,between origins},

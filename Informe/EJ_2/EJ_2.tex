@@ -1,5 +1,8 @@
 \section{Ejercicio 2}
 
+% Defino un comando para trabajar mas comodo con subindices
+\newcommand{\subindex}[1]{_{\ \ \color{red} #1}}
+
 % El desarrollo de la primera expresión de 5 variables
 % usando mintérminos se realiza en esta subsección
 \subsection{Expresi\'on en mint\'erminos}
@@ -13,29 +16,128 @@ La subsecci\'on presente tratar\'a la siguiente expresi\'on caracterizada como:
 En el siguiente desarrollo primero se escribe de forma completa la suma de productos que se describe en la expresi\'on
 consignada, donde cada producto se compone de la combinaci\'on de entradas en cada estado indicado, de forma tal que el resultado 
 de tal producto sea un estado l\'ogico activo, esto es, un '1' binario. Con el objetivo de proveer la mayor claridad posible en el desarrollo,
-se subindican y supraindican los t\'erminos, en donde el sub\'indice describe la identificaci\'on de un t\'ermino y luego el supra\'indice describe
-el conjunto de t\'erminos de los cu\'ales deriva.
+se subindican los t\'erminos, en donde el sub\'indice describe la identificaci\'on de un t\'ermino.
 
 \begin{equation*}
 \begin{align*}
-f(e,d,c,b,a) & = {\overline{e} \cdot \overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}}
-+ {\overline{e} \cdot \overline{d} \cdot \overline{c} \cdot b \cdot \overline{a}} 
-+ {\overline{e} \cdot \overline{d}  \cdot c \cdot \overline{b} \cdot \overline{a}}  
-+ {\overline{e} \cdot d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
-+ {\overline{e} \cdot \overline{d} \cdot c \cdot b \cdot a}
-+ {\overline{e} \cdot d \cdot \overline{c} \cdot b \cdot \overline{a}}  \\
-& + {\overline{e} \cdot d \cdot c \cdot \overline{b} \cdot \overline{a}}
-+ {e \cdot \overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
-+ {e \cdot \overline{d} \cdot \overline{c} \cdot b \cdot \overline{a}}
-+ {e \cdot \overline{d} \cdot c \cdot \overline{b} \cdot \overline{a}}
-+ {e \cdot \overline{d} \cdot c \cdot b \cdot a}
-+ {e \cdot d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} \\
-& + {e \cdot d \cdot \overline{c} \cdot \overline{b} \cdot a} 
-+ {e \cdot d \cdot \overline{c} \cdot b \cdot \overline{a}} 
-+ {e \cdot d \cdot \overline{c} \cdot b \cdot a}
-+ {e \cdot d \cdot c \cdot \overline{b} \cdot \overline{a}}
+f(e,d,c,b,a) & =  \subindex{0} {\overline{e} \cdot \overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{1} {\overline{e} \cdot \overline{d} \cdot \overline{c} \cdot b \cdot \overline{a}} 
++ \subindex{2} {\overline{e} \cdot \overline{d}  \cdot c \cdot \overline{b} \cdot \overline{a}}  
++ \subindex{3} {\overline{e} \cdot d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{4} {\overline{e} \cdot \overline{d} \cdot c \cdot b \cdot a}
++ \subindex{5} {\overline{e} \cdot d \cdot \overline{c} \cdot b \cdot \overline{a}}  \\
+& + \subindex{6} {\overline{e} \cdot d \cdot c \cdot \overline{b} \cdot \overline{a}}
++ \subindex{7} {e \cdot \overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{8} {e \cdot \overline{d} \cdot \overline{c} \cdot b \cdot \overline{a}}
++ \subindex{9} {e \cdot \overline{d} \cdot c \cdot \overline{b} \cdot \overline{a}}
++ \subindex{10} {e \cdot \overline{d} \cdot c \cdot b \cdot a}
++ \subindex{11} {e \cdot d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} \\
+& + \subindex{12} {e \cdot d \cdot \overline{c} \cdot \overline{b} \cdot a} 
++ {\subindex{13} e \cdot d \cdot \overline{c} \cdot b \cdot \overline{a}} 
++ \subindex{14} {e \cdot d \cdot \overline{c} \cdot b \cdot a}
++ \subindex{15} {e \cdot d \cdot c \cdot \overline{b} \cdot \overline{a}}
 \end{align*}
 \end{equation*}
+
+Luego se toman los t\'erminos de una manera adecuada de forma tal que se aplica sobre ellos la propiedad de abosrci\'on 
+y luego se reducen, obteniendo como resultado la siguiente expresi\'on en la cual se subindican a izquierda y en rojo de d\'onde
+fueron simplificados aplicando la absorci\'on.
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = \subindex{13,14} {e \cdot d \cdot \overline{c} \cdot b} 
++ \subindex{13,5}  {d \cdot \overline{c} \cdot b \cdot \overline{a}}
++ \subindex{13,8}  {e \cdot \overline{c} \cdot b \cdot \overline{a}}
++ \subindex{0,1}  {\overline{e} \cdot \overline{c} \cdot \overline{d} \cdot \overline{a}}
++ \subindex{0,2}  {\overline{e} \cdot \overline{d} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{0,3}  {\overline{e} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} \\
+& + \subindex{3,6}  {\overline{e} \cdot d \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{0,7}  {\overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{2,9}  {\overline{d} \cdot c \cdot \overline{b} \cdot \overline{a}}
++ \subindex{3,11}  {d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{11,12}  {e \cdot d \cdot \overline{c} \cdot \overline{b}}
++ \subindex{11,15}  {e \cdot d \cdot \overline{b} \cdot \overline{a}} \\
+& + \subindex{1,5}  {\overline{e} \cdot \overline{c} \cdot b \cdot \overline{a}}
++ \subindex{2,6}  {\overline{e} \cdot c \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{3,5}  {\overline{e} \cdot d \cdot \overline{c} \cdot \overline{a}}
++ \subindex{7,8}  {e \cdot \overline{d} \cdot \overline{c} \cdot \overline{a}} 
++ \subindex{7,9}  {e \cdot \overline{d} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{4,10}  {\overline{d} \cdot c \cdot b \cdot a}
+\end{align*}
+\end{equation*}
+
+Con el fin de no recargar la notaci\'on y mantener el m\'etodo empleado para vincular aquellos
+t\'erminos que son simplificados, se copian nuevamente la expresi\'on previa con una numeraci\'on nueva
+que en este caso los identifica para su posterior simplificaci\'on.
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = \subindex{0} {e \cdot d \cdot \overline{c} \cdot b} 
++ \subindex{1}  {d \cdot \overline{c} \cdot b \cdot \overline{a}}
++ \subindex{2}  {e \cdot \overline{c} \cdot b \cdot \overline{a}}
++ \subindex{3}  {\overline{e} \cdot \overline{c} \cdot \overline{d} \cdot \overline{a}}
++ \subindex{4}  {\overline{e} \cdot \overline{d} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{5}  {\overline{e} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} \\
+& + \subindex{6}  {\overline{e} \cdot d \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{7}  {\overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{8}  {\overline{d} \cdot c \cdot \overline{b} \cdot \overline{a}}
++ \subindex{9}  {d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{10}  {e \cdot d \cdot \overline{c} \cdot \overline{b}}
++ \subindex{11}  {e \cdot d \cdot \overline{b} \cdot \overline{a}} \\
+& + \subindex{12}  {\overline{e} \cdot \overline{c} \cdot b \cdot \overline{a}}
++ \subindex{13}  {\overline{e} \cdot c \cdot \overline{b} \cdot \overline{a}} 
++ \subindex{14}  {\overline{e} \cdot d \cdot \overline{c} \cdot \overline{a}}
++ \subindex{15}  {e \cdot \overline{d} \cdot \overline{c} \cdot \overline{a}} 
++ \subindex{16}  {e \cdot \overline{d} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{17}  {\overline{d} \cdot c \cdot b \cdot a}
+\end{align*}
+\end{equation*}
+
+Repitiendo la modalidad, se simplifican algunos de los t\'erminos aplicando la regla de la absorci\'on,
+se indican en los t\'erminos resultantes aquellos que fueron juntados.
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = \subindex{0,10} {e \cdot d \cdot \overline{c}}
++ \subindex{1,9} {\color{blue} d \cdot \overline{c} \cdot \overline{a}}
++ \subindex{8,9} {\overline{d} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{4,6} {\color{brown} \overline{e} \cdot \overline{b} \cdot \overline{a}}
++ \subindex{2,12} {\overline{c} \cdot b \cdot \overline{a}}
++ \subindex{3,14} {\overline{e} \cdot \overline{c} \cdot \overline{a}}
++ \subindex{5,13} {\overline{e} \cdot \overline{b} \cdot \overline{a}} \\
+& + \subindex{11,16} {\color{brown} e \cdot \overline{b} \cdot \overline{a}}
++ \subindex{17} {\overline{d} \cdot c \cdot b \cdot a}
++ \subindex{3,15} {\color{blue} \overline{d} \cdot \overline{c} \cdot \overline{a}}
+\end{align*}
+\end{equation*}
+
+En la \'ultima expresi\'on hay dos pares de t\'erminos de colores azul y marr\'on, sobre los cuales
+puede aplicarse propiedad de la absorci\'on nuevamente y se reescribe adecuadamente como sigue:
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = {e \cdot d \cdot \overline{c}}
++ {\color{blue} \overline{b} \cdot \overline{a}}
++ {\color{brown} \overline{c} \cdot \overline{a}}
++ {\color{blue} \overline{d} \cdot \overline{b} \cdot \overline{a}}
++ {\color{brown} \overline{c} \cdot b \cdot \overline{a}}
++ {\color{brown} \overline{e} \cdot \overline{c} \cdot \overline{a}}
++ {\color{blue} \overline{e} \cdot \overline{b} \cdot \overline{a}}
++ {\overline{d} \cdot c \cdot b \cdot a}
+\end{align*}
+\end{equation*}
+
+Finalmente, se obtiene la expresi\'on reducida:
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = {e \cdot d \cdot \overline{c}}
++ {\overline{b} \cdot \overline{a}}
++ {\overline{c} \cdot \overline{a}}
++ {\overline{d} \cdot c \cdot b \cdot a}
+\end{align*}
+\end{equation*}
+
 
 \subsubsection{Simplificación con mapas de Karnaugh}
 

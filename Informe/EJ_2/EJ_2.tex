@@ -177,6 +177,22 @@ f(e,d,c,b,a) & = {e \cdot d \cdot \overline{c}}
 \end{equation*}
 
 \subsubsection{Expresión desarrollada usando NOR}
+Partiendo de la primera expresi\'on obtenida, se puede aplicar la propiedad de De Morgan para modificar las operaciones AND en operaciones OR
+aplicando un adecuado uso del algebra booleana y obteniendo finalmente todo escrito en compuertas NOR,
+como se hace a continuaci\'on.
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = \overline{
+    \overline{
+            \overline{\overline{e} + \overline{d} + c}
+            + \overline{b + a}
+            + \overline{c + a}
+            + \overline{d + \overline{c} + \overline{b} + \overline{a}}
+            }
+    }
+\end{align*}
+\end{equation*}
 
 \subsubsection{Circuitos lógicos}
 
@@ -270,5 +286,30 @@ f(d,c,b,a) & = {(c+a)}
 \end{equation*}
 
 \subsubsection{Expresión desarrollada usando NOR}
+En forma an\'aloga a la otra parte del ejercicio la expresi\'on obtenida anteriormente puede ser llevada a una forma donde se haga
+uso \'unicamente de operaciones NOR aplicando el teorema de De Morgan.
+
+\begin{equation*}
+\begin{align*}
+f(d,c,b,a) & = \overline{
+    \overline{
+        {(c+a)}
+        \cdot {(b+a)}
+        \cdot {(d+\overline{c}+\overline{b}+\overline{a})} 
+    }
+}
+\end{align*}
+\end{equation*}
+
+\begin{equation*}
+\begin{align*}
+f(d,c,b,a) & = \overline{
+    \overline{(c+a)}
+    + \overline{(b+a)}
+    + \overline{(d+\overline{c}+\overline{b}+\overline{a})} 
+}
+\end{align*}
+\end{equation*}
+
 
 \subsubsection{Circuitos lógicos}

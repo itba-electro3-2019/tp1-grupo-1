@@ -3,8 +3,39 @@
 % El desarrollo de la primera expresión de 5 variables
 % usando mintérminos se realiza en esta subsección
 \subsection{Expresi\'on en mint\'erminos}
+La subsecci\'on presente tratar\'a la siguiente expresi\'on caracterizada como:
+\begin{equation*}
+    f(e,d,c,b,a) = \sum m(0,2,4,7,8,10,12,16,18,20,23,24,25,26,27,28)
+\end{equation*}
+
 
 \subsubsection{Simplificación con Álgebra booleana}
+En el siguiente desarrollo primero se escribe de forma completa la suma de productos que se describe en la expresi\'on
+consignada, donde cada producto se compone de la combinaci\'on de entradas en cada estado indicado, de forma tal que el resultado 
+de tal producto sea un estado l\'ogico activo, esto es, un '1' binario. Con el objetivo de proveer la mayor claridad posible en el desarrollo,
+se subindican y supraindican los t\'erminos, en donde el sub\'indice describe la identificaci\'on de un t\'ermino y luego el supra\'indice describe
+el conjunto de t\'erminos de los cu\'ales deriva.
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = {\overline{e} \cdot \overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}}
++ {\overline{e} \cdot \overline{d} \cdot \overline{c} \cdot b \cdot \overline{a}} 
++ {\overline{e} \cdot \overline{d}  \cdot c \cdot \overline{b} \cdot \overline{a}}  
++ {\overline{e} \cdot d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
++ {\overline{e} \cdot \overline{d} \cdot c \cdot b \cdot a}
++ {\overline{e} \cdot d \cdot \overline{c} \cdot b \cdot \overline{a}}  \\
+& + {\overline{e} \cdot d \cdot c \cdot \overline{b} \cdot \overline{a}}
++ {e \cdot \overline{d} \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} 
++ {e \cdot \overline{d} \cdot \overline{c} \cdot b \cdot \overline{a}}
++ {e \cdot \overline{d} \cdot c \cdot \overline{b} \cdot \overline{a}}
++ {e \cdot \overline{d} \cdot c \cdot b \cdot a}
++ {e \cdot d \cdot \overline{c} \cdot \overline{b} \cdot \overline{a}} \\
+& + {e \cdot d \cdot \overline{c} \cdot \overline{b} \cdot a} 
++ {e \cdot d \cdot \overline{c} \cdot b \cdot \overline{a}} 
++ {e \cdot d \cdot \overline{c} \cdot b \cdot a}
++ {e \cdot d \cdot c \cdot \overline{b} \cdot \overline{a}}
+\end{align*}
+\end{equation*}
 
 \subsubsection{Simplificación con mapas de Karnaugh}
 

@@ -138,7 +138,6 @@ f(e,d,c,b,a) & = {e \cdot d \cdot \overline{c}}
 \end{align*}
 \end{equation*}
 
-
 \subsubsection{Simplificación con mapas de Karnaugh}
 
 \subsubsection{Expresión desarrollada usando NOR}
@@ -148,8 +147,67 @@ f(e,d,c,b,a) & = {e \cdot d \cdot \overline{c}}
 % El desarrollo de la segunda expresión de 4 variables
 % usando maxtérminos se realiza en esta subsección
 \subsection{Expresi\'on en maxt\'erminos}
+En forma an\'aloga con la expresi\'on de los mint\'erminos, se presenta la expresi\'on de maxt\'erminos consignada para ser
+desarrollada y simplificada a trav\'es de diferentes m\'etodos. Aqu\'i tambi\'en se emplea el uso de sub\'indices para describir
+e identificar los t\'erminos al momento de aplicar las propiedades.
+
+\begin{equation*}
+    f(d,c,b,a) = \prod M(0,2,4,7,8,10,12)
+\end{equation*}
 
 \subsubsection{Simplificación con Álgebra booleana}
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = \subindex{0} {(d+c+b+a)}
+\cdot \subindex{1} {(d+c+\overline{b}+a)}
+\cdot \subindex{2} {(d+\overline{c}+b+a)}
+\cdot \subindex{3} {(d+\overline{c}+\overline{b}+\overline{a})}
+\cdot \subindex{4} {(\overline{d}+c+b+a)} \\
+& \cdot \subindex{5} {(\overline{d}+c+\overline{b}+a)}
+\cdot \subindex{6} {(\overline{d}+\overline{c}+b+a)}
+\end{align*}
+\end{equation*}
+
+Se aplica la propiedad de absorci\'on y, juntando los t\'erminos que son indicados en los sub\'indices de los 
+resultantes, luego se llega a la siguiente expresi\'on:
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = \subindex{0,1} {\color{blue} (d+c+a)}
+\cdot \subindex{0,2} {\color{brown} (d+b+a)}
+\cdot \subindex{0,4} {(c+b+a)}
+\cdot \subindex{1,5} {(c+\overline{b}+a)}
+\cdot \subindex{2,6} {(\overline{c}+b+a)}
+\cdot \subindex{5} {(d+\overline{c}+\overline{b}+\overline{a})} \\
+& \cdot \subindex{4,5} {\color{blue} (\overline{d}+c+a)}
+\cdot \subindex{4,6} {\color{brown} (\overline{d}+b+a)}
+\end{align*}
+\end{equation*}
+
+Nuevamente aplicando absorci\'on con los t\'erminos indicados en los colores azul y marr\'on,
+luego queda expresado de la siguiente forma para volver a aplicar la misma propiedad:
+
+\begin{equation*}
+\begin{align*}
+f(e,d,c,b,a) & = {\color{blue} (c+a)}
+\cdot {\color{brown} (b+a)}
+\cdot {\color{blue} (c+b+a)}
+\cdot {\color{blue} (c+\overline{b}+a)}
+\cdot {\color{brown} (\overline{c}+b+a)}
+\cdot {(d+\overline{c}+\overline{b}+\overline{a})} 
+\end{align*}
+\end{equation*}
+
+Finalmente absorbiendo estos miembros de las sumas:
+
+\begin{equation*}
+    \begin{align*}
+    f(e,d,c,b,a) & = {(c+a)}
+    \cdot {(b+a)}
+    \cdot {(d+\overline{c}+\overline{b}+\overline{a})} 
+    \end{align*}
+    \end{equation*}
 
 \subsubsection{Simplificación con mapas de Karnaugh}
 

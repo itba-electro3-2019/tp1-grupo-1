@@ -1,0 +1,99 @@
+\section{Ejercicio 4: Conversor de binario a Gray de 4 bits}
+\subsection{Armado de tabla de verdad}
+En la siguiente tabla se muestra la equivalencia entre un n\'umero binario de 4 bits y el mismo en c\'odigo de Gray. Seg\'un la convenci\'on adpotada, "A" ser\'a el MSB y "D" ser\'a el LSB.
+
+\begin{table}[h!]\caption{Tabla de verdad}
+\centering
+\begin{tabular}{cccc|cccc}
+A & B & C & D & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ \\ \hline
+0 & 0 & 0 & 0 & 0  & 0  & 0  & 0  \\
+0 & 0 & 0 & 1 & 0  & 0  & 0  & 1  \\
+0 & 0 & 1 & 0 & 0  & 0  & 1  & 1  \\
+0 & 0 & 1 & 1 & 0  & 0  & 1  & 0  \\
+0 & 1 & 0 & 0 & 0  & 1  & 1  & 0  \\
+0 & 1 & 0 & 1 & 0  & 1  & 1  & 1  \\
+0 & 1 & 1 & 0 & 0  & 1  & 0  & 1  \\
+0 & 1 & 1 & 1 & 0  & 1  & 0  & 0  \\
+1 & 0 & 0 & 0 & 1  & 1  & 0  & 0  \\
+1 & 0 & 0 & 1 & 1  & 1  & 0  & 1  \\
+1 & 0 & 1 & 0 & 1  & 1  & 1  & 1  \\
+1 & 0 & 1 & 1 & 1  & 1  & 1  & 0  \\
+1 & 1 & 0 & 0 & 1  & 0  & 1  & 0  \\
+1 & 1 & 0 & 1 & 1  & 0  & 1  & 1  \\
+1 & 1 & 1 & 0 & 1  & 0  & 0  & 1  \\
+1 & 1 & 1 & 1 & 1  & 0  & 0  & 0 
+\end{tabular}
+\end{table}
+
+En base a esto, se puede expresar a cada bit de salida ($s_{1}$,$s_{2}$,$s_{3}$,$s_{4}$) como una combinación de entradas (A,B,C,D) en forma de minitérminos.
+
+De esta forma, obtenemos las siguientes expresiones:
+
+\begin{equation}\label{s1_mini}
+    s_{1} = A.\overline{B}.\overline{C}.\overline{D} +A.\overline{B}.\overline{C}.D+A.\overline{B}.C.\overline{D}+A.\overline{B}.C.D+A.B.\overline{C}.\overline{D}+A.B.\overline{C}.D+A.B.C.D
+\end{equation}
+
+\begin{equation}\label{s2_mini}
+    s_{2} = A\overline{B}\overline{C}\overline{D} +A\overline{B}\overline{C}D+A\overline{B}C\overline{D}+A\overline{B}CD+AB\overline{C}\overline{D}+AB\overline{C}D+ABCD
+\end{equation}
+
+\begin{equation}\label{s3_mini}
+    s_{3} = \overline{A}\overline{B}C\overline{D}+\overline{A}\overline{B}CD+\overline{A}B\overline{C}\overline{D}+\overline{A}B\overline{C}D+A\overline{B}C\overline{D}+A\overline{B}CD+AB\overline{C}\overline{D}+AB\overline{C}D
+\end{equation}
+
+\begin{equation}\label{s4_mini}
+    s_{4} = \overline{A}\overline{B}\overline{C}D+\overline{A}\overline{B}C\overline{D}+\overline{A}B\overline{C}D+\overline{A}BC\overline{D}++A\overline{B}\overline{C}D+A\overline{B}C\overline{D}+AB\overline{C}D+ABC\overline{D}
+\end{equation}
+
+\subsection{Simplificación. Mapas de Karnaugh}
+
+Las expresiones calculadas en el apartado anterior no son del todo eficientes a la hora de implementar el circuito lógico, debido a que no están apropiadamente simplificadas. Para encontrar la expresión óptima que satisfaga la tabla de verdad utilizaremos el método de mapas de Karnaugh, en este caso con minitérminos. Como tenemos cuatro salidas distintas debemos realizar cuatro de estos mapas, que resultarán en una expresión de suma de productos de las entradas. A continuación se reproducen estos diagramas y las expresiones derivadas de los mismos.
++
+    \begin{Karnaugh}\label{Karnaugh_s1}
+        \contingut{0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1}
+       \implicant{3}{10}{red}
+    \end{Karnaugh}
+
+\begin{Karnaugh}\label{Karnaugh_s2}
+        \contingut{0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0}
+       \implicant{1}{9}{green}
+       \implicant{2}{10}{green}
+    \end{Karnaugh}
+    
+\begin{Karnaugh}\label{Karnaugh_s3}
+        \contingut{0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0}
+       \implicant{4}{6}{blue}
+       \implicant{8}{10}{blue}
+    \end{Karnaugh}
+
+Realizando las correspondientes asociaciones obtenemos las siguientes expresiones que describen el comportamiento de cada bit de salida.
+
+\begin{equation}\label{s1_Karnaugh}
+    s_{1}= A
+\end{equation}
+
+\begin{equation}\label{s2_Karnaugh}
+    s_{2}= A.\overline{B}+\overline{A}.B
+\end{equation}
+
+\begin{equation}\label{s3_Karnaugh}
+    s_{3}= B.\overline{C}+\overline{B}.C
+\end{equation}
+
+\begin{equation}\label{s4_Karnaugh}
+    s_{4}= C.\overline{D}+\overline{C}.D
+\end{equation}
+
+\subsection{Circuito l\'ogico}\label{ej2_circ}
+
+En base a las ecuaciones encontradas se construy\'o el circuito l\'ogico mostrado en la figura~\ref{fig:ej4_circuito_logico}, utilizando compuertas \textsc{OR}, \textsc{AND} y \textsc{NOT}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./EJ_4/EJ4_TP1_Electro3.png}
+    \caption{Circuito l\'ogico}
+    \label{fig:ej4_circuito_logico}
+\end{figure}
+
+\subsection{Programa en Verilog}
+Se adjunta en la entrega de este trabajo pr\'actico el programa que representa al circuito mostrado en la secci\'on~\ref{ej2_circ}.

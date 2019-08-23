@@ -12,7 +12,7 @@ class ArgumentsInterpreter():
     Third is number of bits for fractionary part.
     '''
 
-    def __init__(self, arg_list : list):
+    def __init__(self, arg_list: list):
         self.argument_list = arg_list
         self.is_valid = self.validate()
 
@@ -23,7 +23,7 @@ class ArgumentsInterpreter():
         return 2 ** -self.argument_list[2]
 
     def get_range(self):
-        return 2 ** self.argument_list[1] - 2 ^^ self.argument_list[2]
+        return 2 ** self.argument_list[1] - 2 ** self.argument_list[2]
         '''if (self.argument_list[0]):
             return 2 ** (self.argument_list[1] + self.argument_list[2])
         else:

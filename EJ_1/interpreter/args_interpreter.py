@@ -1,3 +1,6 @@
+MAX_NUM_FRAC_PART = 1074
+MAX_NUM_INT_PART = 1023
+
 class ArgumentsInterpreter():
     '''
     Serves as an indicator of a fixed point binary system.
@@ -22,24 +25,26 @@ class ArgumentsInterpreter():
             self.is_valid = False
 
     def validate(self):
-        validated = True
         if len(self.argument_list) != 3:
             self.err_message.append('Argument list\' size different from 3.')
-            validated = False
+            return False
         if (self.argument_list[0] != 0 and self.argument_list[0] != 1):
             self.err_message.append('Argument list\' first element is neither 0 nor 1.')
-            validated = False
-        return validated
+            return False
+        if (self.argument_list[1] > MAX_NUM_FRAC_PART):
+            self.err_message.append('Number of bits in fractionary part out of accepted range. Maximum is 1074.')
+            return False
+        if (self.argument_list[1] > MAX_NUM_INT_PART):
+            self.err_message.append('Number of bits in integer part out of accepted range. Maximum is 1023.')
+            return False
+
+        return True
 
     def get_resolution(self):
         return 2 ** -self.argument_list[2]
 
     def get_range(self):
         return 2 ** self.argument_list[1] - 2 ** -self.argument_list[2]
-        '''if (self.argument_list[0]):
-            return 2 ** (self.argument_list[1] + self.argument_list[2])
-        else:
-            return 2 ** (self.argument_list[1] + self.argument_list[2]) - 1''' 
 
     def get_err_message(self):
         return self.err_message

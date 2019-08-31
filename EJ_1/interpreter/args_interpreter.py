@@ -31,8 +31,8 @@ class ArgumentsInterpreter():
         if (self.argument_list[0] != 0 and self.argument_list[0] != 1):
             self.err_message.append('Argument list\' first element is neither 0 nor 1.')
             return False
-        if (self.argument_list[1] > MAX_NUM_FRAC_PART):
-            self.err_message.append('Number of bits in fractionary part out of accepted range. Maximum is 1074.')
+        if (self.argument_list[2] > MAX_NUM_FRAC_PART):
+            self.err_message.append('Number of bits in fractionary part out of accepted range. Maximum is 1073.')
             return False
         if (self.argument_list[1] > MAX_NUM_INT_PART):
             self.err_message.append('Number of bits in integer part out of accepted range. Maximum is 1023.')

@@ -1,0 +1,21 @@
+\section{Ejercicio 1}
+Se realizó un programa bajo el nombre run.py, dentro de la carpeta EJ\_1 del proyecto, el cual calcula el rango y resolución para una cierta convención de números en punto fijo.
+Recibe tres parámetros por línea de comando: un 1 o un 0 indicando si el sistema es signado, cantidad de bits de la parte entera, y cantidad de bits de la parte fraccionaria, en ese órden.
+Ante algún error en el formato en que se le pasan los parámetros, o ya sea porque los mismos exceden las capacidades del programa, se imprimirá en pantalla el mensaje ERROR.
+Los errores pueden estar ocasionados por alguna de las siguientes razones:
+\begin{itemize}
+    \item No se pasa ningún argumento.
+    \item Los argumentos no son números enteros.
+    \item Se pasa una cantidad de argumentos distinta a 3.
+    \item El primer argumento (que indica si el sistema es signado o no) es distinto de 0 o 1.
+\end{itemize}
+
+
+\subsection{Limitaciones del programa}
+También puede devolverse ERROR a causa de que la cantidad de bits asignados a la parte entera o a la fraccionaria exceden los límites del lenguaje utilizado para el programa.
+El código se escribió en Python y se buscaron los casos límite para los cuales el programa deja de devolver valores con sentido:
+\begin{itemize}
+    \item La cantidad de bits de la parte entera debe ser menor o igual a 1023.
+    \item La cantidad de bits de la parte fraccionaria debe se menor o igual a 1074.
+\end{itemize}
+

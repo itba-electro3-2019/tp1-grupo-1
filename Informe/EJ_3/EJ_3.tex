@@ -1,12 +1,12 @@
 \section{Ejercicio 3}
-De los dos módulos pedidos para implementar en Verilog se tomó la decisión, de forma completamente arbitraria, de realizar uno mediante las compuertas lógicas que lo componen, y otro a través de la descripción de su comportamiento (behavioural).
-La razón detrás de esta decisión fue pura y exclusivamente para hacer uso de las variantes provistas por Verilog, e interiorizarnos en su estilo de programación.
+De los dos módulos pedidos para implementar en Verilog se tomó la decisión de realizar uno mediante las compuertas lógicas que lo componen, y otro a través de la descripción de su comportamiento (behavioural).
+La razón detrás de esta decisión fue para hacer uso de las variantes provistas por Verilog, e interiorizarnos en su estilo de programación.
 
-\subsection{Decoder de 4 entradas}
-Recibe una entrada de 2 bits, que determinan cual de las cuatro salidas accionar.
-Su implementación se realizó a través de lógica de compuertas, donde únicamente la combinación correcta de los dos bits de entrada, ponen a la salida con ese número en 1 lógico.
-Las relaciones lógicas son relativamente sencillas y \textit{straight-forward}, por lo cual no se considera necesario demostrarlas mediante una tabla de verdad o mapa de Karnaugh.
-A continuación se presenta el código:
+\subsection{Decoder de 4 salidas}
+Esta implementación de un decoder de 4 salidas recibe una arreglo de 2 bits, que determinan cual de las cuatro salidas accionar.
+La misma se realizó a través de lógica de compuertas, donde únicamente la combinación correcta de los dos bits de entrada, ponen a la salida con ese número, en 1 lógico.
+Las relaciones lógicas son sencillas de comprender y quedan explicitadas en el mismo código.
+A continuación se presenta el código en Verilog:
 \begin{lstlisting}
     module decoder4out(coded, y0, y1, y2, y3);
         input [1:0] coded;
@@ -21,10 +21,10 @@ A continuación se presenta el código:
 \end{lstlisting}
 
 \subsection{MUX de 4 entradas}
-Recibe una entrada de 4 bits con las 4 "fuentes", otra entrada de 2 bits que hace las veces de selector, y cuenta con una salida de 1 bit.
+Esta implementación de un mux de 4 entradas recibe un arreglo de 4 bits con las 4 "fuentes", otro arreglo de 2 bits que hace las veces de selector, y cuenta con una salida de 1 bit.
 La salida copiará el valor de la entrada determinada por el selector.
-El módulo es logró mediante una descripción del comportamiento del mismo, en el cual se le especificó qué debía realizar ante cambios en alguna de sus entradas.
-A continuación se presenta el código:
+El módulo se logró mediante una descripción del comportamiento del mismo, en el cual se le especificó qué debía realizar ante cambios en alguna de sus entradas.
+A continuación se presenta el código en Verilog:
 \begin{lstlisting}
     module mux4in (x, sel, y);
         input [3:0] x;

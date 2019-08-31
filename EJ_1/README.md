@@ -12,12 +12,12 @@ the pip install command in the console. After that you are ready to go.
 * pip install -r requirements.txt 
 
 ## Execution
-Execute the program by running the main.py program.
-* python main.py
+Execute the program by running the run.py program.
+* python3 run.py
 
 ## Testing
 You can run the test bench by writing the following command in the terminal, located at EJ_1 folder in your computer:
-* ./run.sh
+* ./tests.sh
 
 ## Authors
 Farall, Facundo David  

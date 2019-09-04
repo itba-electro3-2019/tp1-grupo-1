@@ -26,7 +26,7 @@ A & B & C & D & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ \\ \hline
 \end{tabular}
 \end{table}
 
-En base a esto, se puede expresar a cada bit de salida ($s_{1}$,$s_{2}$,$s_{3}$,$s_{4}$) como una combinación de entradas (A,B,C,D) en forma de minitérminos.
+En base a esto, se puede expresar a cada bit de salida ($s_{1}$,$s_{2}$,$s_{3}$,$s_{4}$) como una combinaci\'on de entradas (A,B,C,D) en forma de minit\'erminos.
 
 De esta forma, obtenemos las siguientes expresiones:
 
@@ -48,7 +48,7 @@ De esta forma, obtenemos las siguientes expresiones:
 
 \subsection{Simplificaci\'on. Mapas de Karnaugh}
 
-Las expresiones calculadas en el apartado anterior no son del todo eficientes a la hora de implementar el circuito l\'ogico, debido a que no están apropiadamente simplificadas. Para encontrar la expresión óptima que satisfaga la tabla de verdad utilizaremos el método de mapas de Karnaugh, en este caso con minitérminos. Como tenemos cuatro salidas distintas debemos realizar cuatro de estos mapas, que resultarán en una expresi\'on de suma de productos de las entradas. A continuaci\'on se reproducen estos diagramas y las expresiones derivadas de los mismos, donde en cada mapa cada color representa un grupo.
+Las expresiones calculadas en el apartado anterior no son del todo eficientes a la hora de implementar el circuito l\'ogico, debido a que no est\'an apropiadamente simplificadas. Para encontrar la expresi\'on \'optima que satisfaga la tabla de verdad utilizaremos el m\'etodo de mapas de Karnaugh, en este caso con minit\'erminos. Como tenemos cuatro salidas distintas debemos realizar cuatro de estos mapas, que resultar\'an en una expresi\'on de suma de productos de las entradas. A continuaci\'on se reproducen estos diagramas y las expresiones derivadas de los mismos, donde en cada mapa cada color representa un grupo.
 
 \begin{center}
 
@@ -57,7 +57,7 @@ Las expresiones calculadas en el apartado anterior no son del todo eficientes a 
        \implicant{3}{10}{red}
     \end{Karnaugh}
     
-Mapa de Karnaugh para S1
+Mapa de Karnaugh para $s_1$
 
 \begin{Karnaugh}\label{Karnaugh_s2}
         \contingut{0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0}
@@ -65,7 +65,7 @@ Mapa de Karnaugh para S1
        \implicant{2}{10}{red}
     \end{Karnaugh}
     
-Mapa de Karnaugh para S2
+Mapa de Karnaugh para $s_2$
 
 \begin{Karnaugh}\label{Karnaugh_s4}
         \contingut{0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0}
@@ -73,7 +73,7 @@ Mapa de Karnaugh para S2
        \implicantcostats{12}{10}{green}
      \end{Karnaugh}
     
-Mapa de Karnaugh para S3
+Mapa de Karnaugh para $s_3$
 
 \begin{Karnaugh}\label{Karnaugh_s4}
         \contingut{0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0}
@@ -81,7 +81,7 @@ Mapa de Karnaugh para S3
        \implicant{8}{10}{green}
     \end{Karnaugh}
 
-Mapa de Karnaugh para S4    
+Mapa de Karnaugh para $s_4$    
 \end{center} 
 Realizando las correspondientes asociaciones obtenemos las siguientes expresiones que describen el comportamiento de cada bit de salida.
 

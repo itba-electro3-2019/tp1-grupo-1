@@ -290,3 +290,22 @@
   tabsize=3
 }
 %HERE ENDS THE CONFIGURATIONS FOR LISTINGS
+
+%NEEDED FOR THE lt2ti TOOL
+\usepackage[compatibility,siunitx,  americanvoltages, americancurrents, europeanresistors, europeaninductors, americanports,%
+  straightlabels, fetbodydiode, straightvoltages]{circuitikz}
+\usepackage{tikz,amsmath, amssymb,bm,color,pgfkeys,siunitx,ifthen,ulem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+%END OF NEEDED FOR lt2ti TOOL
+
+%THIS IS SO THAT REFERENCES CAN BE CLICKED
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=blue,    
+}
+%END OF REFERENCES

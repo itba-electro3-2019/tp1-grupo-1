@@ -1,0 +1,39 @@
+\section{Ejercicio 1}
+Se realizó un programa bajo el nombre run.py, dentro de la carpeta EJ\_1 del proyecto, el cual calcula el rango y resolución para una cierta convención de números en punto fijo.
+Recibe tres parámetros por línea de comando: un 1 o un 0 indicando si el sistema es signado, cantidad de bits de la parte entera, y cantidad de bits de la parte fraccionaria, en ese órden.
+Ante algún error en el formato en que se le pasan los parámetros, o ya sea porque los mismos exceden las capacidades del programa, se imprimirá en pantalla el mensaje ERROR.
+Los errores pueden estar ocasionados por alguna de las siguientes razones:
+\begin{itemize}
+    \item No se pasa ningún argumento.
+    \item Los argumentos no son números enteros.
+    \item Se pasa una cantidad de argumentos distinta a 3.
+    \item El primer argumento (que indica si el sistema es signado o no) es distinto de 0 o 1.
+\end{itemize}
+
+
+\subsection{Limitaciones del programa}
+También puede devolverse ERROR a causa de que la cantidad de bits asignados a la parte entera o a la fraccionaria exceden los límites del lenguaje utilizado para el programa.
+El código se escribió en Python y se buscaron los casos límite para los cuales el programa deja de devolver valores con sentido:
+\begin{itemize}
+    \item La cantidad de bits de la parte entera debe ser menor o igual a 1023.
+    \item La cantidad de bits de la parte fraccionaria debe se menor o igual a 1074.
+\end{itemize}
+
+Además de las limitaciones mencionadas, existe un error en la representación de los números fraccionarios, inherente al sistema por el cual las computadoras guardan los números.
+La mayoría de los números que en sistema decimal tienen una representación con una cantidad finita de dígitos detrás de la coma, no poseen tal característica en un sistema binario.
+Tal es el caso del número 0,1 en base 10, que en Python, así como muchos otros lenguajes de programación que representan a los números fraccionarios bajo el formato normalizado de IEEE-754, es guardado como 0,1000000000000000055511151231257827021181583404541015625.
+En la mayoría de estos casos, al imprimir el número en pantalla, el lenguaje de Python decidirá aproximar el valor real guardado en memoria, a uno que considere más amigable para el usuario humano.
+Un caso en el cual estas limitaciones pueden verse reflejadas, es si se ingresan como parámetros 0, 5 y 740 (no signado, con 5 bits de parte entera y 740 bits de parte fraccionaria), la salida del programa será:
+\begin{itemize}
+    \item Res: 1.7290327071306454e-223
+    \item Ran: 32.0
+\end{itemize}
+
+A estos se les puede calcular el error absoluto de la siguiente manera:
+\begin{align}
+    E_{Res} = 2^{-740} - 1.7290327071306454 \cdot 10^{-223} \approx 1 \cdot 10^{-236} \\
+    E_{Ran} = 32 - \left(2^{5} - 2^{-740}\right) \approx 1.7290327071286 \cdot 10^{-223}
+\end{align}
+
+Para la resolución, se observarán diferencias recién luego de 13 cifras significativas, mientras que para el rango, luego de 223.
+Ambos errores cometidos pueden considerarse despreciables para casi cualquier sistema real de medición.

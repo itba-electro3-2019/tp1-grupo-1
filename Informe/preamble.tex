@@ -1,7 +1,6 @@
 %%% Preamble
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}
 
-
 \usepackage[T1]{fontenc}
 \usepackage{lmodern} %AGREGO1
 \usepackage{fourier}
@@ -10,12 +9,14 @@
 
 
 
-
+\usepackage{color}
 \usepackage[protrusion=true,expansion=true]{microtype}	
-\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{amsmath}
+\usepackage{amsfonts,amsthm} % Math packages
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
 \usepackage{import}
+\usepackage{multicol}
 
 \usepackage[margin=2cm]{geometry}
 
@@ -27,6 +28,7 @@
 %%% Custom headers/footers (fancyhdr package)
 \usepackage{fancyhdr}
 \pagestyle{fancyplain}
+
 \fancyhead{}											% No page header
 \fancyfoot[L]{}											% Empty 
 \fancyfoot[C]{}											% Empty
@@ -116,7 +118,7 @@
 {
 \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
 \draw (0,0) grid (4,4);
-\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {AB} node [pos=0.75,below left,anchor=north east] {CD} ++(135:1);
+\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {BA} node [pos=0.75,below left,anchor=north east] {DC} ++(135:1);
 %
 \matrix (mapa) [matrix of nodes,
         column sep={0.8cm,between origins},
@@ -225,7 +227,7 @@
 \usepackage{babel}
 
 \usepackage{tikz}
-%\usepackage{circuitikz} 	%Esto es lo que se necesita para los circuitos.
+\usepackage{circuitikz} 	%Esto es lo que se necesita para los circuitos.
 %\usepackage{siunitx}
 %\usemodule[circuitikz]
 %\usepackage{circuitikzgit}

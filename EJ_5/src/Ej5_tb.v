@@ -15,56 +15,56 @@ Ej5 dut(x, y, out, error);
             if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
             x = 1;
             y = 0;
             #1;
            if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
             x = 5;
             y = 4;
             #1;
             if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
             x = 9;
             y = 9;
             #1;
             if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
             x = 8;
             y = 7;
             #1;
             if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
             x = 4;
             y = 2;
             #1;
             if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
             x = 2;
             y = 4;
             #1;
             if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
             x = 10;
             y = 0;
             #1
             if(error)
                 $display("FATAL ERROR: either %d or %d is not a valid input", x, y);
             else
-                $display("%d times %d is %b or %h",x,y,out,out);
+                $display("%d times %d is %b_%b or %h",x,y,out[7:4],out[3:0],out);
 
             $finish;
 

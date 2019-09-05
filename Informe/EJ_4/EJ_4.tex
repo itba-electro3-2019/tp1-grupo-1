@@ -1,9 +1,9 @@
-\section{Ejercicio 4: Conversor de binario a Gray de 4 bits}
+\section{Ejercicio 4}
 
 \subsection{Tabla de verdad}
 En la siguiente tabla se muestra la equivalencia entre un n\'umero binario de 4 bits y el mismo en c\'odigo de Gray. Seg\'un la convenci\'on adpotada, "A" ser\'a el MSB y "D" ser\'a el LSB.
 
-\begin{table}[h!]\caption{Tabla de verdad}
+\begin{table}[H]\caption{Tabla de verdad}
 \centering
 \begin{tabular}{cccc|cccc}
 A & B & C & D & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ \\ \hline
@@ -22,7 +22,7 @@ A & B & C & D & $s_{1}$ & $s_{2}$ & $s_{3}$ & $s_{4}$ \\ \hline
 1 & 1 & 0 & 0 & 1  & 0  & 1  & 0  \\
 1 & 1 & 0 & 1 & 1  & 0  & 1  & 1  \\
 1 & 1 & 1 & 0 & 1  & 0  & 0  & 1  \\
-1 & 1 & 1 & 1 & 1  & 0  & 0  & 0 
+1 & 1 & 1 & 1 & 1  & 0  & 0  & 0
 \end{tabular}
 \end{table}
 
@@ -56,7 +56,7 @@ Las expresiones calculadas en el apartado anterior no son del todo eficientes a 
         \contingut{0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1}
        \implicant{3}{10}{red}
     \end{Karnaugh}
-    
+
 Mapa de Karnaugh para $s_1$
 
 \begin{Karnaugh}\label{Karnaugh_s2}
@@ -64,15 +64,15 @@ Mapa de Karnaugh para $s_1$
        \implicant{1}{9}{green}
        \implicant{2}{10}{red}
     \end{Karnaugh}
-    
+
 Mapa de Karnaugh para $s_2$
 
-\begin{Karnaugh}\label{Karnaugh_s4}
+\begin{Karnaugh}\label{Karnaugh_s3}
         \contingut{0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0}
        \implicant{1}{7}{red}
        \implicantcostats{12}{10}{green}
      \end{Karnaugh}
-    
+
 Mapa de Karnaugh para $s_3$
 
 \begin{Karnaugh}\label{Karnaugh_s4}
@@ -81,8 +81,8 @@ Mapa de Karnaugh para $s_3$
        \implicant{8}{10}{green}
     \end{Karnaugh}
 
-Mapa de Karnaugh para $s_4$    
-\end{center} 
+Mapa de Karnaugh para $s_4$
+\end{center}
 Realizando las correspondientes asociaciones obtenemos las siguientes expresiones que describen el comportamiento de cada bit de salida.
 
 \begin{equation}\label{s1_Karnaugh}
@@ -107,9 +107,9 @@ En base a las ecuaciones encontradas se construy\'o el circuito l\'ogico mostrad
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{./EJ_4/EJ4_TP1_Electro3.png}
+    \includegraphics[width=0.8\textwidth]{./EJ_4/EJ4_TP1_Electro3.png}
     \caption{Circuito l\'ogico}
 \end{figure}
 
 \subsection{Programa en Verilog}
-Se adjunta en la entrega de este trabajo pr\'actico el programa que representa al circuito mostrado en la secci\'on previa. 
+Se adjunta en la entrega de este trabajo pr\'actico el programa que representa al circuito mostrado en la secci\'on previa.

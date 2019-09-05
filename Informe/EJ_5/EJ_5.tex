@@ -4,7 +4,7 @@ Se implementa en Verilog un multiplicador de 2 numeros de un d\'igito en codigo 
 \subsection{Proceso de dise\~no}
 En un principio se decidi\'o implementar este sistema a partir de realizar una tabla de verdad y un mapa de Karnaugh. Sin embargo, ese es un punto de vista que si bien parece ser simple, resulta muy engorroso de implementar. Esto se debe a la cantidad de entradas y salidas del sistema, 8 de cada una. Esto requiere resolver 8 mapas, con 8 variables de entrada.
 Se opta entonces, por implementarlo emulando la manera en que se resuelven multiplicaciones binarias a mano. Se puede observar en \ref{eq:bin_mult_ex} un ejemplo de lo hablado.
-\begin{equation}[H]
+\begin{equation}
     \begin{array}{c}
         \phantom{\times99999}1001\\
         \underline{\times\phantom{9999}0111}\\ %there must be a better way to do this :(((((
